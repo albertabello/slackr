@@ -124,7 +124,7 @@ slackr_bot <- function(...,
 
     resp <- POST(url = incoming_webhook_url, encode = "form",
                  add_headers(`Content-Type` = "application/x-www-form-urlencoded",
-                             Accept = "*/*"), body = URLencode(sprintf("payload={\"channel\": \"%s\", \"username\": \"%s\", \"text\": \"```%s```\"%s}",
+                             Accept = "*/*"), body = URLencode(sprintf("payload={\"channel\": \"%s\", \"username\": \"%s\", \"text\": \"%s\"%s}",
                                                                        channel, username, output, icon_emoji)))
     warn_for_status(resp)
   }
